@@ -1,0 +1,68 @@
+@import "compass/reset";
+@import "compass/css3/border-radius"; 
+
+body {
+  font-family: "Museo Sans", "Segoe UI", "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #737373;
+  margin: 10px 13px 10px 13px;
+}
+
+a {
+  color: #0069d6;
+}
+a:hover {
+  color: #0050a3;
+  text-decoration: none;
+}
+a img {
+  border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 { font-size: 24px; }
+h3 { font-size: 18px; }
+h4 { font-size: 16px; }
+h5 { font-size: 14px; }
+h6 { font-size: 13px; }
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+code, pre {
+    font-family: "DejaVu Sans Mono", "Menlo plus", Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    @include border-radius(3px);
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}

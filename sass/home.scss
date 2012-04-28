@@ -1,0 +1,36 @@
+@import "compass/css3/box-shadow";
+
+#container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#header {
+  border-bottom: solid 1px #cececf;
+  margin-bottom: 20px;
+  background-color: #F1F4F4;
+  padding: 6px;
+  @include single-box-shadow(#44525E, 0, 4px, 20px, -10px);
+  #title {
+    font-size: 40px;
+    font-family: "Segoe UI", "Helvetica Neue", "Futura", sans-serif;
+    font-weight: bold;
+    line-height: 46px;
+  }
+  #about {
+    margin-top: 8px;
+  }
+}
+
+#main {
+  padding: 6px;
+}
+#places {
+  width: 400px;
+  img { padding: 4px; }
+}
+
+.section {
+  margin-top: 10px;
+  margin-bottom: 12px;
+}

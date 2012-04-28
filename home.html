@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>mroach.com</title>
+  <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/home.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="javascripts/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="javascripts/helpers.js"></script>
+  <script type="text/javascript">
+
+    // places I've been. yeah! :D
+    var countries = [
+      { id: "at", name: "Austria" },
+      { id: "be", name: "Belgium" },
+      { id: "ca", name: "Canada" },
+      { id: "cz", name: "Czech Republic" },
+      { id: "dk", name: "Denmark" },
+      { id: "fr", name: "France" },
+      { id: "de", name: "Germany" },
+      { id: "hk", name: "Hong Kong" },
+      { id: "it", name: "Italy" },
+      { id: "in", name: "India" },
+      { id: "jp", name: "Japan" },
+      { id: "mo", name: "Macau" },
+      { id: "my", name: "Malaysia" },
+      { id: "nl", name: "Netherlands" },
+      { id: "no", name: "Norway" },
+      { id: "pl", name: "Poland" },
+      { id: "sg", name: "Singapore" },
+      { id: "sk", name: "Slovakia" },
+      { id: "za", name: "South Africa" },
+      { id: "kr", name: "South Korea" },
+      { id: "es", name: "Spain" },
+      { id: "ch", name: "Switzerland" },
+      { id: "se", name: "Sweden" },
+      { id: "gb", name: "United Kingdom" },
+      { id: "us", name: "United States" },
+    ];
+    
+    var flagFormat = '<img src="images/flags/32/{0}.png" alt="{1}" title="{1}" />';
+    
+  	$(function() {
+      $.each(countries, function(ix, item) {
+        var tag = flagFormat.format(item.id, item.name);
+        $('#places').append($(flagFormat.format(item.id, item.name)));
+      });
+  	});
+  </script>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<div id="title">Mike Roach</div>
+			<div id="about">American living in Sweden. Doing C# development, playing Xbox, travelling the world.</div>
+		</div>
+		<div id="main">
+      
+      <h2>Around the internet</h2>
+      <div class="section">
+        <ul>
+          <li><a href="http://www.facebook.com/mroach">Facebook</a></li>
+          <li><a href="http://www.twitter.com/AvMikeR">Twitter</a></li>
+          <li><a href="http://www.github.com/mroach">Github</a></li>
+          <li><a href="http://live.xbox.com/en-GB/Profile?GamerTag=Toothpaste%20YEAH">Toothpaste YEAH</a> on Xbox Live</li>
+      </div>
+      
+      <h2>Stuff I made</h2>
+      <div class="section">
+        <ul>
+          <li>I love the vim theme <a href="http://www.vim.org/scripts/script.php?script_id=1348">gardener</a> so I <a href="http://studiostyl.es/schemes/gardener">ported it to Visual Studio</a>.</li>
+      </div>
+      <h2>Places I've been</h2>
+			<div class="section">
+				<p>Travel is fun. I like getting passport stamps.</p>
+				<div id="places"></div>
+				<p>Thanks to <a href="http://icondrawer.com">icondrawer</a> for the nice flag icons.</p>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

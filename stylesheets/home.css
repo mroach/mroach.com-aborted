@@ -1,0 +1,47 @@
+/* line 3, ../sass/home.scss */
+#container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+/* line 8, ../sass/home.scss */
+#header {
+  border-bottom: solid 1px #cececf;
+  margin-bottom: 20px;
+  background-color: #F1F4F4;
+  padding: 6px;
+  -webkit-box-shadow: 0 4px 20px -10px #44525e;
+  -moz-box-shadow: 0 4px 20px -10px #44525e;
+  box-shadow: 0 4px 20px -10px #44525e;
+}
+/* line 14, ../sass/home.scss */
+#header #title {
+  font-size: 40px;
+  font-family: "Segoe UI", "Helvetica Neue", "Futura", sans-serif;
+  font-weight: bold;
+  line-height: 46px;
+}
+/* line 20, ../sass/home.scss */
+#header #about {
+  margin-top: 8px;
+}
+
+/* line 25, ../sass/home.scss */
+#main {
+  padding: 6px;
+}
+
+/* line 28, ../sass/home.scss */
+#places {
+  width: 400px;
+}
+/* line 30, ../sass/home.scss */
+#places img {
+  padding: 4px;
+}
+
+/* line 33, ../sass/home.scss */
+.section {
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
