@@ -1,0 +1,4 @@
+legacy
+images/flags
+*.DS_Store
+.sass-cache/*
