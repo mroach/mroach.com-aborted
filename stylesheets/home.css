@@ -10,8 +10,9 @@
   margin-bottom: 20px;
   background-color: #F1F4F4;
   padding: 6px;
-  -webkit-box-shadow: 0 4px 20px -10px #44525e;
   -moz-box-shadow: 0 4px 20px -10px #44525e;
+  -webkit-box-shadow: 0 4px 20px -10px #44525e;
+  -o-box-shadow: 0 4px 20px -10px #44525e;
   box-shadow: 0 4px 20px -10px #44525e;
 }
 /* line 14, ../sass/home.scss */
@@ -41,6 +42,12 @@
 }
 
 /* line 33, ../sass/home.scss */
+#map {
+  width: 700px;
+  height: 400px;
+}
+
+/* line 38, ../sass/home.scss */
 .section {
   margin-top: 10px;
   margin-bottom: 12px;

@@ -7,6 +7,7 @@
   <link href="stylesheets/home.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="javascripts/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="javascripts/helpers.js"></script>
+  <script type='text/javascript' src='https://www.google.com/jsapi'></script>
   <script type="text/javascript">
 
     // places I've been. yeah! :D
@@ -47,6 +48,22 @@
         $('#places').append($(flagFormat.format(item.id, item.name)));
       });
   	});
+  	
+    google.load('visualization', '1', {'packages': ['geochart']});
+    google.setOnLoadCallback(drawRegionsMap);
+    
+    function drawRegionsMap() {
+      
+      var options = {};
+      
+      var dt = new google.visualization.DataTable();
+      dt.addColumn('string', 'Country');
+      $.each(countries, function(ix, c) {
+        dt.addRow([c.name])
+      })
+      var chart = new google.visualization.GeoChart(document.getElementById('map'));
+      chart.draw(dt, options);
+    }
   </script>
 </head>
 <body>
@@ -77,6 +94,7 @@
 			<div class="section">
 				<p>Travel is fun. I like getting passport stamps.</p>
 				<div id="places"></div>
+				<div id="map"></div>
 				<p>Thanks to <a href="http://icondrawer.com">icondrawer</a> for the nice flag icons.</p>
 			</div>
 			
