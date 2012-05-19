@@ -57,15 +57,15 @@
       });
       
       $('#map').vectorMap({
-        color: '#ddd',
-        backgroundColor: 'transparent',
+        color: '#d6d1bf',
+        backgroundColor: '#f0efeb',
         hoverOpacity: 0.7,
         hoverColor: false
       });
       
       $.each(countries, function(ix, c) {
         var o = {};
-        o[c.id] = c.lived ? '#E23232' : '#006491';
+        o[c.id] = c.lived ? '#a3bfd2' : '#bacabd';
         $('#map').vectorMap('set', 'colors', o);
       })
   	});

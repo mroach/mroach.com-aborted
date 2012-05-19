@@ -45,9 +45,14 @@
 #map {
   width: 700px;
   height: 400px;
+  border-radius: 20px;
+  -moz-box-shadow: inset 5px 5px 20px 0 rgba(208, 201, 179, 0.4);
+  -webkit-box-shadow: inset 5px 5px 20px 0 rgba(208, 201, 179, 0.4);
+  -o-box-shadow: inset 5px 5px 20px 0 rgba(208, 201, 179, 0.4);
+  box-shadow: inset 5px 5px 20px 0 rgba(208, 201, 179, 0.4);
 }
 
-/* line 38, ../sass/home.scss */
+/* line 40, ../sass/home.scss */
 .section {
   margin-top: 10px;
   margin-bottom: 12px;
