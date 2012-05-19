@@ -5,41 +5,48 @@
   <title>mroach.com</title>
   <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <link href="stylesheets/home.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/jquery-jvectormap.css" media="screen" rel="stylesheet" type="text/css" />
+  
   <script type="text/javascript" src="javascripts/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="javascripts/underscore-1.3.3.min.js"></script>
   <script type="text/javascript" src="javascripts/helpers.js"></script>
-  <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+  
+  <script src="javascripts/jquery.vector-map.js" type="text/javascript"></script>
+  <script src="javascripts/world-en.js" type="text/javascript"></script>
+  
   <script type="text/javascript">
 
     // places I've been. yeah! :D
     var countries = [
-      { id: "at", name: "Austria" },
-      { id: "be", name: "Belgium" },
-      { id: "ca", name: "Canada" },
-      { id: "cz", name: "Czech Republic" },
-      { id: "dk", name: "Denmark" },
-      { id: "fr", name: "France" },
-      { id: "de", name: "Germany" },
-      { id: "gr", name: "Greece" },
-      { id: "hk", name: "Hong Kong" },
-      { id: "it", name: "Italy" },
-      { id: "in", name: "India" },
-      { id: "jp", name: "Japan" },
-      { id: "mo", name: "Macau" },
-      { id: "my", name: "Malaysia" },
-      { id: "nl", name: "Netherlands" },
-      { id: "no", name: "Norway" },
-      { id: "pl", name: "Poland" },
-      { id: "sg", name: "Singapore" },
-      { id: "sk", name: "Slovakia" },
-      { id: "za", name: "South Africa" },
-      { id: "kr", name: "South Korea" },
-      { id: "es", name: "Spain" },
-      { id: "ch", name: "Switzerland" },
-      { id: "se", name: "Sweden" },
-      { id: "tr", name: "Turkey" },
-      { id: "gb", name: "United Kingdom" },
-      { id: "us", name: "United States" },
+      { id: "at", firstVisit: 'Dec 2010', lived: false, name: "Austria" },
+      { id: "be", firstVisit: 'Feb 2010', lived: false, name: "Belgium" },
+      { id: "ca", firstVisit: 'Nov 2005', lived: false, name: "Canada" },
+      { id: "cz", firstVisit: 'Nov 2009', lived: false, name: "Czech Republic" },
+      { id: "dk", firstVisit: 'Aug 2008', lived: false, name: "Denmark" },
+      { id: "fr", firstVisit: 'Feb 2004', lived: false, name: "France" },
+      { id: "de", firstVisit: 'Aug 2008', lived: false, name: "Germany" },
+      { id: "gr", firstVisit: 'May 2012', lived: false, name: "Greece" },
+      { id: "hk", firstVisit: 'Sep 2009', lived: false, name: "Hong Kong" },
+      { id: "it", firstVisit: 'Sep 2009', lived: false, name: "Italy" },
+      { id: "in", firstVisit: 'Feb 2012', lived: false, name: "India" },
+      { id: "jp", firstVisit: 'Apr 2008', lived: false, name: "Japan" },
+      { id: "mo", firstVisit: 'May 2010', lived: false, name: "Macau" },
+      { id: "my", firstVisit: 'Sep 2007', lived: false, name: "Malaysia" },
+      { id: "nl", firstVisit: 'Aug 2004', lived: false, name: "Netherlands" },
+      { id: "no", firstVisit: 'Nov 2003', lived: false, name: "Norway" },
+      { id: "pl", firstVisit: 'Dec 2008', lived: false, name: "Poland" },
+      { id: "sg", firstVisit: 'Sep 2007', lived: false, name: "Singapore" },
+      { id: "sk", firstVisit: 'Dec 2010', lived: false, name: "Slovakia" },
+      { id: "za", firstVisit: 'Mar 2012', lived: false, name: "South Africa" },
+      { id: "kr", firstVisit: 'Apr 2008', lived: false, name: "South Korea" },
+      { id: "es", firstVisit: 'May 2009', lived: false, name: "Spain" },
+      { id: "ch", firstVisit: 'Aug 2008', lived: false, name: "Switzerland" },
+      { id: "se", firstVisit: 'Mar 2006', lived: true,  name: "Sweden" },
+      { id: "tr", firstVisit: 'May 2012', lived: false, name: "Turkey" },
+      { id: "gb", firstVisit: 'Jul 2005', lived: false, name: "United Kingdom" },
+      { id: "us", firstVisit: 'Oct 1985', lived: true,  name: "United States" },
     ];
+    
     
     var flagFormat = '<img src="images/flags/32/{0}.png" alt="{1}" title="{1}" />';
     
@@ -48,23 +55,21 @@
         var tag = flagFormat.format(item.id, item.name);
         $('#places').append($(flagFormat.format(item.id, item.name)));
       });
+      
+      $('#map').vectorMap({
+        color: '#ddd',
+        backgroundColor: 'transparent',
+        hoverOpacity: 0.7,
+        hoverColor: false
+      });
+      
+      $.each(countries, function(ix, c) {
+        var o = {};
+        o[c.id] = c.lived ? '#E23232' : '#006491';
+        $('#map').vectorMap('set', 'colors', o);
+      })
   	});
   	
-    google.load('visualization', '1', {'packages': ['geochart']});
-    google.setOnLoadCallback(drawRegionsMap);
-    
-    function drawRegionsMap() {
-      
-      var options = {};
-      
-      var dt = new google.visualization.DataTable();
-      dt.addColumn('string', 'Country');
-      $.each(countries, function(ix, c) {
-        dt.addRow([c.name])
-      })
-      var chart = new google.visualization.GeoChart(document.getElementById('map'));
-      chart.draw(dt, options);
-    }
   </script>
 </head>
 <body>
