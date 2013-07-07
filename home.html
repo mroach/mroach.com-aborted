@@ -6,14 +6,14 @@
   <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <link href="stylesheets/home.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <link href="stylesheets/jquery-jvectormap.css" media="screen" rel="stylesheet" type="text/css" />
-  
+
   <script type="text/javascript" src="javascripts/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="javascripts/underscore-1.3.3.min.js"></script>
   <script type="text/javascript" src="javascripts/helpers.js"></script>
-  
+
   <script src="javascripts/jquery.vector-map.js" type="text/javascript"></script>
   <script src="javascripts/world-en.js" type="text/javascript"></script>
-  
+
   <script type="text/javascript">
 
     // places I've been. yeah! :D
@@ -27,6 +27,7 @@
       { id: "de", firstVisit: 'Aug 2008', lived: false, name: "Germany" },
       { id: "gr", firstVisit: 'May 2012', lived: false, name: "Greece" },
       { id: "hk", firstVisit: 'Sep 2009', lived: false, name: "Hong Kong" },
+      { id: "id", firstVisit: 'Feb 2013', lived: false, name: "Indonesia" },
       { id: "it", firstVisit: 'Sep 2009', lived: false, name: "Italy" },
       { id: "in", firstVisit: 'Feb 2012', lived: false, name: "India" },
       { id: "jp", firstVisit: 'Apr 2008', lived: false, name: "Japan" },
@@ -48,30 +49,30 @@
       { id: "gb", firstVisit: 'Jul 2005', lived: false, name: "United Kingdom" },
       { id: "us", firstVisit: 'Oct 1985', lived: true,  name: "United States" },
     ];
-    
-    
+
+
     var flagFormat = '<img src="images/flags/32/{0}.png" alt="{1}" title="{1}" />';
-    
+
   	$(function() {
       $.each(countries, function(ix, item) {
         var tag = flagFormat.format(item.id, item.name);
         $('#places').append($(flagFormat.format(item.id, item.name)));
       });
-      
+
       $('#map').vectorMap({
         color: '#d6d1bf',
         backgroundColor: '#f0efeb',
         hoverOpacity: 0.7,
         hoverColor: false
       });
-      
+
       $.each(countries, function(ix, c) {
         var o = {};
         o[c.id] = c.lived ? '#a3bfd2' : '#A7B6AA';
         $('#map').vectorMap('set', 'colors', o);
       })
   	});
-  	
+
   </script>
 </head>
 <body>
@@ -81,7 +82,7 @@
 			<div id="about"></div>
 		</div>
 		<div id="main">
-      
+
       <h2>Around the internet</h2>
       <div class="section">
         <ul>
@@ -92,7 +93,7 @@
           <li><a href="http://my.flightmemory.com/mroach">Flight memory</a></li>
           <li><a href="http://www.flickr.com/photos/mroach">Flickr</a></li>
       </div>
-      
+
       <h2>Stuff I made</h2>
       <div class="section">
         <ul>
@@ -105,7 +106,7 @@
 				<div id="map"></div>
 				<p>Thanks to <a href="http://icondrawer.com">icondrawer</a> for the nice flag icons.</p>
 			</div>
-			
+
 		</div>
 	</div>
 </body>
